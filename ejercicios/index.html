@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scope</title>
+</head>
+
+<body>
+    <p>Consola</p>
+    <script>
+        // Spoce global 
+        // var message = 'Hello, Platzi'
+        // var $ = function(message){
+        //     console.log('say: ' + message)
+        // }
+
+        // Function Scope
+        // function printNumbers() {
+        //     var i
+        //     for (i = 0; i < 10; i++) {
+        //         function eventtuallyPrintNumber(n) {
+        //             setTimeout(() => {
+        //                 console.log(n)
+        //             }, 100)
+        //         }
+        //         eventtuallyPrintNumber(i)
+        //     }
+        // }
+        // printNumbers()
+
+        // Block Scope
+        function printNumbers() {
+            for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        console.log(i)
+                    }, 100)
+            }
+        }
+        printNumbers()
+
+        // Moduel Scope
+        
+
+    </script>
+
+</body>
+
+</html>
