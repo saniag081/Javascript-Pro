@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closures</title>
+</head>
+<body>
+    <p>closures</p>
+
+
+    <script>
+        // closures
+        // printColor
+
+        // IIFE
+        (function(){
+            let color = 'green';
+
+            function printColor(){
+                console.log(color);
+            }
+            printColor();
+        })();
+
+        // funciones que regresan funciones
+        // function makeColorPrinter(color){
+        //     let colorMenssege = `the color is ${color}`;
+
+        //     return function(){
+        //         console.log(colorMenssege);
+        //     }
+        // }
+
+        // let greenColorPrinter = makeColorPrinter('green');
+
+        // console.log(greenColorPrinter());
+
+
+        // variables privadas
+        // const counter = {
+        //     count: 3
+        // }
+        // console.log(counter.count)
+
+        function makeCounter(n){
+            let count = n;
+
+            return {
+                incrase: function(){
+                    count++
+                },
+                decrase: function(){
+                    count--
+                },
+                getCount: function(){
+                    return count;
+                }
+            }
+        }    
+
+        let counter = makeCounter(7);
+
+        console.log(`The count is ${counter.getCount()}`)
+        counter.incrase();
+        console.log(`The count is ${counter.getCount()}`)
+        counter.decrase();
+        counter.decrase();
+        counter.decrase();
+        counter.decrase();
+
+        console.log(`The count is ${counter.getCount()}`)
+        // nno perimite variable no esta epuesta
+        counter.count = 0;
+        console.log(`The count is ${counter.getCount()}`)
+
+        </script>
+</body>
+</html>
