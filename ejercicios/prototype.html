@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <p>
+        <em>abre consola</em>
+    </p>
+
+    <script>
+        //un objecto comun y corriente
+        // function Hero(name){
+        //     const hero = {
+        //         name: name
+        //     }
+
+        //     hero.saludar = function(){
+        //         console.log(`Hola soy ${this.name}`);
+        //     };
+
+        //     return hero;
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+
+        // const link = Hero('link');
+        // link.saludar();
+
+
+        //aun podemos mejorar mas y evitar tener que crear la misma funcion cada ves 
+        // const heroMethods = {
+        //     saludar: function(){
+        //         console.log(`Me llamo ${this.name}`);
+        //     },
+        // };
+
+        // function Hero(name) {
+        //     const hero = {
+        //         name: name
+        //     }
+
+        //     hero.saludar = heroMethods.saludar;
+        //     return hero;
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+
+        // const link = Hero('link');
+        // link.saludar();
+
+
+
+        //object create
+        // const nuevoObjecto = Object.create(objeto);
+        // const heroMethods = {
+        //     saludar: function(){
+        //         console.log(`Soy super ${this.name}`);
+        //     },
+        // };
+
+        // function Hero(name) {
+        //     const hero = Object.create(heroMethods);
+        //     hero.name = name;
+
+        //     return hero;
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+
+        // const link = Hero('link');
+        // link.saludar();
+
+
+
+        //los metodos de hero dentro de hero
+
+        //   const heroMethods = {
+        //     saludar: function(){
+        //         console.log(`Soy super ${this.name}`);
+        //     },
+        // };
+
+        // function Hero(name) {
+        //     const hero = Object.create(Hero.prototype);
+        //     hero.name = name;
+
+        //     return hero;
+        // }
+
+        // Hero.prototype.saludar = function(){
+        //     console.log(`Soy super. ${this.name}`);            
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+
+        // const link = Hero('link');
+        // link.saludar();
+
+        //new es un atajo (azucar sintactica) para llevar Hero.prototype alobjecto
+
+        function Hero(name) {
+            // this = Object.create(Hero.prototype);
+            this.name = name;
+
+            // return this;
+        }
+
+        Hero.prototype.saludar = function () {
+            console.log(`New ${this.name}`);
+        }
+
+        const zelda = new Hero('Zelda');
+        zelda.saludar();
+
+
+        const link = new Hero('link');
+        link.saludar();
+
+
+    </script>
+</body>
+
+</html>
